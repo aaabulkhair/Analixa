@@ -1,6 +1,7 @@
 # GPT-3, The Model Simply Knows!
 
 ![GPT-3](images/GPT-3.gif)
+
 Natural Language Processing (NLP) has been one of the most challenging areas in deep learning. This is due to several reasons. First, human language is complicated, even for humans themselves! 
 
 Consider asking someone about his experience in learning Chinese, for example. Without a doubt, he will tell you that this is difficult. The difficulty in learning any language is that almost all the meaning can be derived from the contextual conversational pipeline. In other words, you can’t tell what the purpose. Let’s see the following example:
