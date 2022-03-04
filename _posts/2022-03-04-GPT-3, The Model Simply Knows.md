@@ -1,6 +1,6 @@
 # GPT-3, The Model Simply Knows!
 
-![GPT-3](images/GPT-3.gif)
+![GPT-3](https://github.com/aaabulkhair/Analixa/blob/master/images/GPT-3.gif)
 
 Natural Language Processing (NLP) has been one of the most challenging areas in deep learning. This is due to several reasons. First, human language is complicated, even for humans themselves! 
 
