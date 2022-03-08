@@ -7,7 +7,6 @@ title: GPT-3, The Model Simply Knows!
 image: images/GPT-3-preview.gif
 ---
 
-# GPT-3, The Model Simply Knows!
 
 ![]({{ site.baseurl }}/images/GPT-3.gif "GPT-3, The Model Simply Knows")
 
