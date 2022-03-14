@@ -148,7 +148,7 @@ Imagine writing some English sentences and get back in return, a full functionin
 
 What if you can see an entirely generated debate just be making a GPT-3 model talk with another! It’s incredible. What is more frightening is that these two models after five messages began to the limitations of human beings. 
 
-![]({{ site.baseurl }}/images/debate.png "Depate")
+![]({{ site.baseurl }}/images/debate.png "Debate")
 
 
 Finally, and without a doubt, GPT-3 has changed the face of language modeling from now on. This superior performance will open the door to dozens of philosophical and ethical questions. Some people may wonder about some jobs, such as will these models make some jobs disappear like writers, coders, and teachers. Is it ethical to use this model to pass exams?! ( Note that GPT-3 was able to score 57% in the SAT exam ). I think the future will answer all of these questions!
