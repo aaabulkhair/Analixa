@@ -1,5 +1,5 @@
 ---
-toc: true
+toc: false
 layout: post
 description: Selecting the best ML for a dataset can always be challenging. In this post, we will try reveal a lot of the ambiguity related to that!
 categories: [Machine Learning]
@@ -82,7 +82,7 @@ Now, what should we do to answer these questions?
 
 ![]({{ site.baseurl }}/images/EDA.gif "Model Selection Steps")
 
-## ****Exploratory Data Analysis (EDA)****
+### **Exploratory Data Analysis (EDA)**
 
 The ultimate goal of the EDA process is to know, explore, and visualize your data. Also, after understanding the data, EDA should help in deciding the best algorithm for your data. Maybe EDA’s process has no clear steps to do, but we can do a little summarization of this process. Besides, we will comment on how each step can reveal a piece of info about the best algorithm to use.
 
