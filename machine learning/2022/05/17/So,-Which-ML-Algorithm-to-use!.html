@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>So, which ML Algorithm to use?! | Analixa</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="So, which ML Algorithm to use?!" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Selecting the best ML for a dataset can always be challenging. In this post, we will try reveal a lot of the ambiguity related to that!" />
+<meta property="og:description" content="Selecting the best ML for a dataset can always be challenging. In this post, we will try reveal a lot of the ambiguity related to that!" />
+<link rel="canonical" href="https://aaabulkhair.github.io/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html" />
+<meta property="og:url" content="https://aaabulkhair.github.io/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html" />
+<meta property="og:site_name" content="Analixa" />
+<meta property="og:image" content="https://aaabulkhair.github.io/Analixa/images/which_ml_cover.gif" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-05-17T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://aaabulkhair.github.io/Analixa/images/which_ml_cover.gif" />
+<meta property="twitter:title" content="So, which ML Algorithm to use?!" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-05-17T00:00:00-05:00","datePublished":"2022-05-17T00:00:00-05:00","description":"Selecting the best ML for a dataset can always be challenging. In this post, we will try reveal a lot of the ambiguity related to that!","headline":"So, which ML Algorithm to use?!","image":"https://aaabulkhair.github.io/Analixa/images/which_ml_cover.gif","mainEntityOfPage":{"@type":"WebPage","@id":"https://aaabulkhair.github.io/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html"},"url":"https://aaabulkhair.github.io/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Analixa/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://aaabulkhair.github.io/Analixa/feed.xml" title="Analixa" /><link rel="shortcut icon" type="image/x-icon" href="/Analixa/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Analixa/">Analixa</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Analixa/about/">About Me</a><a class="page-link" href="/Analixa/search/">Search</a><a class="page-link" href="/Analixa/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">So, which ML Algorithm to use?!</h1><p class="page-description">Selecting the best ML for a dataset can always be challenging. In this post, we will try reveal a lot of the ambiguity related to that!</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-05-17T00:00:00-05:00" itemprop="datePublished">
+        May 17, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      9 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Analixa/categories/#Machine Learning">Machine Learning</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#decision-boundary-concept">Decision Boundary Concept</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#linear-models">Linear Models</a></li>
+<li class="toc-entry toc-h3"><a href="#tree-based-models">Tree-based Models</a></li>
+<li class="toc-entry toc-h3"><a href="#distance-based-models">Distance-based Models</a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#exploratory-data-analysis-eda">**Exploratory Data Analysis (EDA)**</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#outliers">Outliers</a></li>
+<li class="toc-entry toc-h3"><a href="#normality">Normality</a></li>
+<li class="toc-entry toc-h3"><a href="#missing-values">Missing Values</a></li>
+<li class="toc-entry toc-h3"><a href="#feature-engineering">Feature Engineering</a></li>
+<li class="toc-entry toc-h3"><a href="#missing-values--handling">Missing Values  Handling</a></li>
+<li class="toc-entry toc-h3"><a href="#outliers--handling">Outliers  Handling</a></li>
+<li class="toc-entry toc-h3"><a href="#scaling-and-normalization">Scaling and normalization</a></li>
+<li class="toc-entry toc-h3"><a href="#categorical-variables-handling">Categorical Variables Handling</a></li>
+<li class="toc-entry toc-h3"><a href="#deployment-considerations">Deployment Considerations</a></li>
+<li class="toc-entry toc-h3"><a href="#usability-considerations">Usability Considerations</a></li>
+<li class="toc-entry toc-h3"><a href="#explainability-vs-predictability">Explainability Vs. Predictability</a></li>
+</ul>
+</li>
+</ul><p>A lot of data science practitioners found the process of selecting a machine learning algorithm overwhelming and confusing. That’s because there are a bunch of algorithms that can do the same task. For example, classification can be done using a  <strong>Decision Tree</strong>,  <strong>SVM, Logistic Regression, Naive Bayes, KNN,</strong> and <strong>Neural Network.</strong></p>
+
+<p>Now, which one should be used? To clarify a bit of the ambiguity related to that question, let’s answer a simpler one.</p>
+
+<p><strong>What is a machine learning algorithm trying to do?!</strong></p>
+
+<p>Any algorithm tries to translate a group of features into a useful prediction through some mathematical system that differs from one algorithm to another. So this translation process will vary also.</p>
+
+<p>By now, you may have decided what keyword plays a major role in selecting an algorithm. It is simply nothing but the features themselves, and we are just trying to choose the best algorithm (translator) for our features.</p>
+
+<p>In the next section, I will try to categorize the most widely known algorithms (translators) based on their behavior.</p>
+
+<h2 id="decision-boundary-concept">
+<a class="anchor" href="#decision-boundary-concept" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Decision Boundary Concept</strong>
+</h2>
+
+<p><img src="/Analixa/images/decision_boundary.png" alt="" title="Decision Boundary"></p>
+
+<p>One of the concepts that must be very bright and clear in every data scientist’s mind is the decision boundary concept. Decision Boundary is what defines the algorithm behavior and how it sees the data and deals with it. In other words and metaphorically speaking, it tells us the strong points of each of our algorithms (translators).</p>
+
+<p>This useful graph below is the best in illustrating this concept. Check from  <strong>sklearn</strong> <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html">documentation</a>  for reproducibility. It shows the performance of different algorithms for different data sets.</p>
+
+<p><img src="/Analixa/images/ml_models.png" alt="" title="Decision Boundaries for Different ML Algorithms"></p>
+
+<p>Take a moment to grasp this graph because it reveals a lot about every algorithm. For example:</p>
+
+<ul>
+  <li>Nearest Neighbour Algorithms (KNN) is heavily relying on the closeness of points.</li>
+  <li>Linear SVM is trying to slice the data to decide the class of each data point.</li>
+  <li>RBF SVM is like KNN in finding linear combinations that separate the data but not in the way KNN does.</li>
+  <li>Decision Tree is tackling the problem differently. It is just to do some splits in the data to separate between the classes.</li>
+  <li>RandomForest is adopting the same strategy of Decision Tree but with more splits.</li>
+  <li>Neural Networks are also trying to get a linear combination of the data to separate classes.</li>
+  <li>AdaBoost is also adopting the idea of splits but in an enhanced and modified way.</li>
+</ul>
+
+<p>Based on these observations, let’s try to categorize our algorithms now.</p>
+
+<h3 id="linear-models">
+<a class="anchor" href="#linear-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Linear Models</strong>
+</h3>
+
+<p>The term linear model implies that the model is specified as a linear combination of features. Based on training data, the learning process computes one weight for each feature to form a model that can predict or estimate the target value.</p>
+
+<p><img src="/Analixa/images/linear_models.gif" alt="" title="Linear Models"></p>
+
+<p>This category includes the following algorithms:</p>
+
+<ul>
+  <li>Linear Regression</li>
+  <li>Logistic Regression</li>
+  <li>SVM</li>
+  <li>Neural Networks</li>
+</ul>
+
+<h3 id="tree-based-models">
+<a class="anchor" href="#tree-based-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Tree-based Models</strong>
+</h3>
+
+<p>Tree-based models use a series of if-then rules to generate predictions from one or more decision trees. This is also what causes this splitting effect that you can easily see in the above graph.</p>
+
+<p><img src="/Analixa/images/tree_based_models.gif" alt="" title="Tree-based Models"></p>
+
+<p>This category includes the following algorithms:</p>
+
+<ul>
+  <li>Decision Tree</li>
+  <li>Random Forest (ensemble methods)</li>
+  <li>XGBoost (ensemble methods)</li>
+  <li>LightGBM (ensemble methods)</li>
+  <li>GradientBoosting (ensemble methods)</li>
+  <li>AdaBoost (ensemble methods)</li>
+  <li>CatBoost (ensemble methods)</li>
+</ul>
+
+<h3 id="distance-based-models">
+<a class="anchor" href="#distance-based-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Distance-based Models</strong>
+</h3>
+
+<p>Distance-based models rely on determining the decision boundary based on the closeness of the points to each other. So, they are profoundly affected by the scale of each feature.</p>
+
+<p><img src="/Analixa/images/distance_based.png" alt="" title="Distance-based Models"></p>
+
+<p>Based on the previous categorization, we can turn our question to a simpler one. Are the features in our data helpful for the idea of splits, so we should pick one of the tree-based models? Or are they more useful in creating linear trends between the features and the target so we should choose a linear model?</p>
+
+<p>Now, what should we do to answer these questions?</p>
+
+<p><img src="/Analixa/images/EDA.gif" alt="" title="Model Selection Steps"></p>
+
+<h2 id="exploratory-data-analysis-eda">
+<a class="anchor" href="#exploratory-data-analysis-eda" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>**Exploratory Data Analysis (EDA)</strong>**</h2>
+
+<p>The ultimate goal of the EDA process is to know, explore, and visualize your data. Also, after understanding the data, EDA should help in deciding the best algorithm for your data. Maybe EDA’s process has no clear steps to do, but we can do a little summarization of this process. Besides, we will comment on how each step can reveal a piece of info about the best algorithm to use.</p>
+
+<p>1- Look at Summary statistics and visualizations</p>
+
+<ul>
+  <li>Percentiles, ranges, variance, and standard deviation can help identify the range for most of the data.</li>
+  <li>Averages and medians can describe the central tendency.</li>
+  <li>Correlations can indicate strong relationships.</li>
+</ul>
+
+<p>2- Visualize the data</p>
+
+<ul>
+  <li>Box plots can identify outliers.</li>
+  <li>Density plots and histograms show the spread of data.</li>
+  <li>Scatter plots can describe bivariate relationships.</li>
+</ul>
+
+<p>Now, let’s comment about how the outcomes of these two steps will contribute to model selection.</p>
+
+<h3 id="outliers">
+<a class="anchor" href="#outliers" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Outliers</strong>
+</h3>
+
+<p>Lots of the above statistics and measures will denote information about the dispersion of our data. Keep in mind that lots of outliers will affect any linear model you choose, as the model will try to fit the points with high weights. This should make you think about the following questions.<br>
+<strong>– Would a linear model help with the existence of these outliers?<br>
+– If the outliers’ problem persists, What is the best way to handle them, and what is the handling method that will serve our model of choice?</strong></p>
+
+<h3 id="normality">
+<a class="anchor" href="#normality" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Normality</strong>
+</h3>
+
+<p>The above measures and graphs show the distribution of our data and the correlation between features and the target variable. This should make you think about another two critical things</p>
+
+<ul>
+  <li>
+    <p>Lack of data normality may add a point in using a tree-based model as the idea of splits is less affected by the data normality.</p>
+  </li>
+  <li>
+    <p>The strong correlation will add a point in using a linear model as it makes it easier for a model to construct some sort of linear combination boundaries. On the other hand, using a tree-based model will be less affected by the weak correlation.</p>
+  </li>
+</ul>
+
+<h3 id="missing-values">
+<a class="anchor" href="#missing-values" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Missing Values</strong>
+</h3>
+
+<p>The information denoted about the missing values should ignite some thoughts in every data scientist’s mind. For example,</p>
+<ul>
+  <li>Are the missing values related to some specific event, so they should be treated as a separate category of data? Consequently, they will be more beneficial to a tree-based model?</li>
+  <li>If the need for a linear model persists, what is the best imputation technique that will make these values of a considerable effect on our model?</li>
+  <li>Will using a model that can handle the missing values internally like Naive Bayes or XGBoost alleviate the problem? (Note: sklearn implementation for Naive Bayes algorithm does not allow missing values, but you can implement it manually)</li>
+</ul>
+
+<h3 id="feature-engineering">
+<a class="anchor" href="#feature-engineering" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Feature Engineering</strong>
+</h3>
+
+<p>After the process of EDA, you must have thoughts about the model of choice. At least you are more inclined to model family over another. Now, the process of feature engineering should be done with respect to some model family. Let’s see some of the standard procedures in feature engineering and how they affect the model performance.</p>
+
+<h3 id="missing-values--handling">
+<a class="anchor" href="#missing-values--handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Missing Values</strong>  <strong>Handling</strong>
+</h3>
+
+<ul>
+  <li>Imputing the missing values with the “Unknown” category when dealing with categorical variables will be more beneficial to tree-based models.</li>
+  <li>Imputing the missing values with the mean or median will be more beneficial to linear models over tree-based models.</li>
+  <li>Models that can handle missing values can be susceptible, and not handled missing values can lead them to more reduced performance.</li>
+</ul>
+
+<h3 id="outliers--handling">
+<a class="anchor" href="#outliers--handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Outliers</strong>  <strong>Handling</strong>
+</h3>
+
+<ul>
+  <li>Clipping can be with more value to any linear model as it increases the data normality, but it causes some information loss.</li>
+  <li>Transformations like logarithmic or square root transformation can add a damping effect to the values without any information loss. So, it’s more beneficial to linear models.</li>
+  <li>Tree-based models are less affected by outliers in general because the idea of splits in them will most probably assign them to a separate split.</li>
+</ul>
+
+<h3 id="scaling-and-normalization">
+<a class="anchor" href="#scaling-and-normalization" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Scaling and normalization</strong>
+</h3>
+
+<ul>
+  <li>Feature Scaling or normalization has no value when it comes to the tree-based models. That’s because the idea of splits will not be affected by whatever the scale of the data is.</li>
+  <li>Normalization is an excellent approach when dealing with linear models. It will lead to faster training and better scores.</li>
+  <li>Distance-based models are profoundly affected by the scale of the features. This will open up a door to enforce one feature over another just by increasing its scale.</li>
+</ul>
+
+<h3 id="categorical-variables-handling">
+<a class="anchor" href="#categorical-variables-handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Categorical Variables Handling</strong>
+</h3>
+
+<ul>
+  <li>Some approaches, like One-hot encoding and frequency encoding, can be of great help to a linear model.</li>
+  <li>On reversal, approaches like label encoding are beneficial to a tree-based model as they will boost the ability of a model to do data splits.</li>
+</ul>
+
+<p>After sharing some thoughts in the process of EDA and feature engineering, that will make us more oriented to the best model that can fit our problem. Let’s talk more about non-data related considerations that may affect our choice of the model.</p>
+
+<h3 id="deployment-considerations">
+<a class="anchor" href="#deployment-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Deployment Considerations</strong>
+</h3>
+
+<p>In the next few lines, we will ask questions related to our model of choice but not the data itself. For example:</p>
+
+<ul>
+  <li>What is your data storage capacity? Depending on your system’s storage capacity, you might not be able to store gigabytes of classification/regression models or gigabytes of data to train on.</li>
+  <li>Does the prediction have to be fast? In real-time applications, it is essential to have a prediction as quickly as possible. For instance, in autonomous driving, road signs must be classified as fast as possible to avoid accidents.</li>
+  <li>Does the learning and training process have to be fast? In some circumstances, training models quickly is necessary: sometimes, you need to rapidly update, on the fly, your model with a different dataset.</li>
+</ul>
+
+<h3 id="usability-considerations">
+<a class="anchor" href="#usability-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Usability Considerations</strong>
+</h3>
+
+<p>Now, as we have discussed various families of models, best practices in EDA and feature engineering should be done with respect to a model family, and addressed some deployment considerations that may outweigh the use of one model over another. We will now discuss a crucial aspect of any model that every data scientist should be aware of.</p>
+
+<h3 id="explainability-vs-predictability">
+<a class="anchor" href="#explainability-vs-predictability" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Explainability Vs. Predictability</strong>
+</h3>
+
+<ul>
+  <li>Explainability means how much you could explain your model prediction. For example, <strong>Decision Tree</strong> is a very explainable model. Once you have a prediction from it, you can quickly tell you why you get this prediction by following the series of splits (if-then rules). These models are often called <strong>white-box</strong> models.</li>
+  <li>Predictability means what is the predictive power of your algorithm, regardless of the ability to know why it gives a specific prediction for some input. For example, <strong>Neural Network</strong> is very complex to understand why it provides a particular prediction. These models are often called <strong>black-box</strong> models.</li>
+</ul>
+
+<p>Sometimes you must be aware of this trade-off as the application may require some explainability in your models of choice, so you will end up using simpler models or on reversal. You may not need any explainability for your application. Hence, you may prefer a model with high predictability over a simpler one. Below is a graph that shows this trade-off for various machine learning algorithms.</p>
+
+<p><img src="/Analixa/images/exp-comp.png" alt="" title="Interpretability vs. Complexity trade-off"></p>
+
+
+  </div><a class="u-url" href="/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Analixa/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Analixa/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Analixa/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Data Science School</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/aaabulkhair" target="_blank" title="aaabulkhair"><svg class="svg-icon grey"><use xlink:href="/Analixa/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/aaabulkhair_" target="_blank" title="aaabulkhair_"><svg class="svg-icon grey"><use xlink:href="/Analixa/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
