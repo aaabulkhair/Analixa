@@ -103,8 +103,9 @@ Now, let’s comment about how the outcomes of these two steps will contribute t
 ### **Outliers**
 
 Lots of the above statistics and measures will denote information about the dispersion of our data. Keep in mind that lots of outliers will affect any linear model you choose, as the model will try to fit the points with high weights. This should make you think about the following questions.  
-**– Would a linear model help with the existence of these outliers?  
-– If the outliers’ problem persists, What is the best way to handle them, and what is the handling method that will serve our model of choice?**
+
+- Would a linear model help with the existence of these outliers?  
+- If the outliers’ problem persists, What is the best way to handle them, and what is the handling method that will serve our model of choice?
 
 ### **Normality**
 
