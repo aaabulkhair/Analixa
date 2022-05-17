@@ -7,6 +7,10 @@ title: So, which ML Algorithm to use?!
 image: images/which_ml_cover.gif
 ---
 
+![]({{ site.baseurl }}/images/which_ml_cover.gif "So, Which ML Algorithm to use?!")
+
+
+
 A lot of data science practitioners found the process of selecting a machine learning algorithm overwhelming and confusing. That’s because there are a bunch of algorithms that can do the same task. For example, classification can be done using a  **Decision Tree**,  **SVM, Logistic Regression, Naive Bayes, KNN,** and **Neural Network.**
 
 Now, which one should be used? To clarify a bit of the ambiguity related to that question, let’s answer a simpler one.
