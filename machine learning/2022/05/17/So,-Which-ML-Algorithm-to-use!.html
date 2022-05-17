@@ -113,30 +113,7 @@ window.onload = wrap_img;
     </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#decision-boundary-concept">Decision Boundary Concept</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#linear-models">Linear Models</a></li>
-<li class="toc-entry toc-h3"><a href="#tree-based-models">Tree-based Models</a></li>
-<li class="toc-entry toc-h3"><a href="#distance-based-models">Distance-based Models</a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#exploratory-data-analysis-eda">**Exploratory Data Analysis (EDA)**</a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#outliers">Outliers</a></li>
-<li class="toc-entry toc-h3"><a href="#normality">Normality</a></li>
-<li class="toc-entry toc-h3"><a href="#missing-values">Missing Values</a></li>
-<li class="toc-entry toc-h3"><a href="#feature-engineering">Feature Engineering</a></li>
-<li class="toc-entry toc-h3"><a href="#missing-values--handling">Missing Values  Handling</a></li>
-<li class="toc-entry toc-h3"><a href="#outliers--handling">Outliers  Handling</a></li>
-<li class="toc-entry toc-h3"><a href="#scaling-and-normalization">Scaling and normalization</a></li>
-<li class="toc-entry toc-h3"><a href="#categorical-variables-handling">Categorical Variables Handling</a></li>
-<li class="toc-entry toc-h3"><a href="#deployment-considerations">Deployment Considerations</a></li>
-<li class="toc-entry toc-h3"><a href="#usability-considerations">Usability Considerations</a></li>
-<li class="toc-entry toc-h3"><a href="#explainability-vs-predictability">Explainability Vs. Predictability</a></li>
-</ul>
-</li>
-</ul><p>A lot of data science practitioners found the process of selecting a machine learning algorithm overwhelming and confusing. That’s because there are a bunch of algorithms that can do the same task. For example, classification can be done using a  <strong>Decision Tree</strong>,  <strong>SVM, Logistic Regression, Naive Bayes, KNN,</strong> and <strong>Neural Network.</strong></p>
+    <p>A lot of data science practitioners found the process of selecting a machine learning algorithm overwhelming and confusing. That’s because there are a bunch of algorithms that can do the same task. For example, classification can be done using a  <strong>Decision Tree</strong>,  <strong>SVM, Logistic Regression, Naive Bayes, KNN,</strong> and <strong>Neural Network.</strong></p>
 
 <p>Now, which one should be used? To clarify a bit of the ambiguity related to that question, let’s answer a simpler one.</p>
 
@@ -148,17 +125,15 @@ window.onload = wrap_img;
 
 <p>In the next section, I will try to categorize the most widely known algorithms (translators) based on their behavior.</p>
 
-<h2 id="decision-boundary-concept">
-<a class="anchor" href="#decision-boundary-concept" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Decision Boundary Concept</strong>
-</h2>
+<h2 id="decision-boundary-concept"><strong>Decision Boundary Concept</strong></h2>
 
-<p><img src="/Analixa/images/decision_boundary.png" alt="" title="Decision Boundary"></p>
+<p><img src="/Analixa/images/decision_boundary.png" alt="" title="Decision Boundary" /></p>
 
 <p>One of the concepts that must be very bright and clear in every data scientist’s mind is the decision boundary concept. Decision Boundary is what defines the algorithm behavior and how it sees the data and deals with it. In other words and metaphorically speaking, it tells us the strong points of each of our algorithms (translators).</p>
 
 <p>This useful graph below is the best in illustrating this concept. Check from  <strong>sklearn</strong> <a href="https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html">documentation</a>  for reproducibility. It shows the performance of different algorithms for different data sets.</p>
 
-<p><img src="/Analixa/images/ml_models.png" alt="" title="Decision Boundaries for Different ML Algorithms"></p>
+<p><img src="/Analixa/images/ml_models.png" alt="" title="Decision Boundaries for Different ML Algorithms" /></p>
 
 <p>Take a moment to grasp this graph because it reveals a lot about every algorithm. For example:</p>
 
@@ -174,13 +149,11 @@ window.onload = wrap_img;
 
 <p>Based on these observations, let’s try to categorize our algorithms now.</p>
 
-<h3 id="linear-models">
-<a class="anchor" href="#linear-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Linear Models</strong>
-</h3>
+<h3 id="linear-models"><strong>Linear Models</strong></h3>
 
 <p>The term linear model implies that the model is specified as a linear combination of features. Based on training data, the learning process computes one weight for each feature to form a model that can predict or estimate the target value.</p>
 
-<p><img src="/Analixa/images/linear_models.gif" alt="" title="Linear Models"></p>
+<p><img src="/Analixa/images/linear_models.gif" alt="" title="Linear Models" /></p>
 
 <p>This category includes the following algorithms:</p>
 
@@ -191,13 +164,11 @@ window.onload = wrap_img;
   <li>Neural Networks</li>
 </ul>
 
-<h3 id="tree-based-models">
-<a class="anchor" href="#tree-based-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Tree-based Models</strong>
-</h3>
+<h3 id="tree-based-models"><strong>Tree-based Models</strong></h3>
 
 <p>Tree-based models use a series of if-then rules to generate predictions from one or more decision trees. This is also what causes this splitting effect that you can easily see in the above graph.</p>
 
-<p><img src="/Analixa/images/tree_based_models.gif" alt="" title="Tree-based Models"></p>
+<p><img src="/Analixa/images/tree_based_models.gif" alt="" title="Tree-based Models" /></p>
 
 <p>This category includes the following algorithms:</p>
 
@@ -211,22 +182,19 @@ window.onload = wrap_img;
   <li>CatBoost (ensemble methods)</li>
 </ul>
 
-<h3 id="distance-based-models">
-<a class="anchor" href="#distance-based-models" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Distance-based Models</strong>
-</h3>
+<h3 id="distance-based-models"><strong>Distance-based Models</strong></h3>
 
 <p>Distance-based models rely on determining the decision boundary based on the closeness of the points to each other. So, they are profoundly affected by the scale of each feature.</p>
 
-<p><img src="/Analixa/images/distance_based.png" alt="" title="Distance-based Models"></p>
+<p><img src="/Analixa/images/distance_based.png" alt="" title="Distance-based Models" /></p>
 
 <p>Based on the previous categorization, we can turn our question to a simpler one. Are the features in our data helpful for the idea of splits, so we should pick one of the tree-based models? Or are they more useful in creating linear trends between the features and the target so we should choose a linear model?</p>
 
 <p>Now, what should we do to answer these questions?</p>
 
-<p><img src="/Analixa/images/EDA.gif" alt="" title="Model Selection Steps"></p>
+<p><img src="/Analixa/images/EDA.gif" alt="" title="Model Selection Steps" /></p>
 
-<h2 id="exploratory-data-analysis-eda">
-<a class="anchor" href="#exploratory-data-analysis-eda" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>**Exploratory Data Analysis (EDA)</strong>**</h2>
+<h3 id="exploratory-data-analysis-eda"><strong>Exploratory Data Analysis (EDA)</strong></h3>
 
 <p>The ultimate goal of the EDA process is to know, explore, and visualize your data. Also, after understanding the data, EDA should help in deciding the best algorithm for your data. Maybe EDA’s process has no clear steps to do, but we can do a little summarization of this process. Besides, we will comment on how each step can reveal a piece of info about the best algorithm to use.</p>
 
@@ -248,17 +216,13 @@ window.onload = wrap_img;
 
 <p>Now, let’s comment about how the outcomes of these two steps will contribute to model selection.</p>
 
-<h3 id="outliers">
-<a class="anchor" href="#outliers" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Outliers</strong>
-</h3>
+<h3 id="outliers"><strong>Outliers</strong></h3>
 
-<p>Lots of the above statistics and measures will denote information about the dispersion of our data. Keep in mind that lots of outliers will affect any linear model you choose, as the model will try to fit the points with high weights. This should make you think about the following questions.<br>
-<strong>– Would a linear model help with the existence of these outliers?<br>
+<p>Lots of the above statistics and measures will denote information about the dispersion of our data. Keep in mind that lots of outliers will affect any linear model you choose, as the model will try to fit the points with high weights. This should make you think about the following questions.<br />
+<strong>– Would a linear model help with the existence of these outliers?<br />
 – If the outliers’ problem persists, What is the best way to handle them, and what is the handling method that will serve our model of choice?</strong></p>
 
-<h3 id="normality">
-<a class="anchor" href="#normality" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Normality</strong>
-</h3>
+<h3 id="normality"><strong>Normality</strong></h3>
 
 <p>The above measures and graphs show the distribution of our data and the correlation between features and the target variable. This should make you think about another two critical things</p>
 
@@ -271,9 +235,7 @@ window.onload = wrap_img;
   </li>
 </ul>
 
-<h3 id="missing-values">
-<a class="anchor" href="#missing-values" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Missing Values</strong>
-</h3>
+<h3 id="missing-values"><strong>Missing Values</strong></h3>
 
 <p>The information denoted about the missing values should ignite some thoughts in every data scientist’s mind. For example,</p>
 <ul>
@@ -282,15 +244,11 @@ window.onload = wrap_img;
   <li>Will using a model that can handle the missing values internally like Naive Bayes or XGBoost alleviate the problem? (Note: sklearn implementation for Naive Bayes algorithm does not allow missing values, but you can implement it manually)</li>
 </ul>
 
-<h3 id="feature-engineering">
-<a class="anchor" href="#feature-engineering" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Feature Engineering</strong>
-</h3>
+<h3 id="feature-engineering"><strong>Feature Engineering</strong></h3>
 
 <p>After the process of EDA, you must have thoughts about the model of choice. At least you are more inclined to model family over another. Now, the process of feature engineering should be done with respect to some model family. Let’s see some of the standard procedures in feature engineering and how they affect the model performance.</p>
 
-<h3 id="missing-values--handling">
-<a class="anchor" href="#missing-values--handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Missing Values</strong>  <strong>Handling</strong>
-</h3>
+<h3 id="missing-values--handling"><strong>Missing Values</strong>  <strong>Handling</strong></h3>
 
 <ul>
   <li>Imputing the missing values with the “Unknown” category when dealing with categorical variables will be more beneficial to tree-based models.</li>
@@ -298,9 +256,7 @@ window.onload = wrap_img;
   <li>Models that can handle missing values can be susceptible, and not handled missing values can lead them to more reduced performance.</li>
 </ul>
 
-<h3 id="outliers--handling">
-<a class="anchor" href="#outliers--handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Outliers</strong>  <strong>Handling</strong>
-</h3>
+<h3 id="outliers--handling"><strong>Outliers</strong>  <strong>Handling</strong></h3>
 
 <ul>
   <li>Clipping can be with more value to any linear model as it increases the data normality, but it causes some information loss.</li>
@@ -308,9 +264,7 @@ window.onload = wrap_img;
   <li>Tree-based models are less affected by outliers in general because the idea of splits in them will most probably assign them to a separate split.</li>
 </ul>
 
-<h3 id="scaling-and-normalization">
-<a class="anchor" href="#scaling-and-normalization" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Scaling and normalization</strong>
-</h3>
+<h3 id="scaling-and-normalization"><strong>Scaling and normalization</strong></h3>
 
 <ul>
   <li>Feature Scaling or normalization has no value when it comes to the tree-based models. That’s because the idea of splits will not be affected by whatever the scale of the data is.</li>
@@ -318,9 +272,7 @@ window.onload = wrap_img;
   <li>Distance-based models are profoundly affected by the scale of the features. This will open up a door to enforce one feature over another just by increasing its scale.</li>
 </ul>
 
-<h3 id="categorical-variables-handling">
-<a class="anchor" href="#categorical-variables-handling" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Categorical Variables Handling</strong>
-</h3>
+<h3 id="categorical-variables-handling"><strong>Categorical Variables Handling</strong></h3>
 
 <ul>
   <li>Some approaches, like One-hot encoding and frequency encoding, can be of great help to a linear model.</li>
@@ -329,9 +281,7 @@ window.onload = wrap_img;
 
 <p>After sharing some thoughts in the process of EDA and feature engineering, that will make us more oriented to the best model that can fit our problem. Let’s talk more about non-data related considerations that may affect our choice of the model.</p>
 
-<h3 id="deployment-considerations">
-<a class="anchor" href="#deployment-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Deployment Considerations</strong>
-</h3>
+<h3 id="deployment-considerations"><strong>Deployment Considerations</strong></h3>
 
 <p>In the next few lines, we will ask questions related to our model of choice but not the data itself. For example:</p>
 
@@ -341,15 +291,11 @@ window.onload = wrap_img;
   <li>Does the learning and training process have to be fast? In some circumstances, training models quickly is necessary: sometimes, you need to rapidly update, on the fly, your model with a different dataset.</li>
 </ul>
 
-<h3 id="usability-considerations">
-<a class="anchor" href="#usability-considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Usability Considerations</strong>
-</h3>
+<h3 id="usability-considerations"><strong>Usability Considerations</strong></h3>
 
 <p>Now, as we have discussed various families of models, best practices in EDA and feature engineering should be done with respect to a model family, and addressed some deployment considerations that may outweigh the use of one model over another. We will now discuss a crucial aspect of any model that every data scientist should be aware of.</p>
 
-<h3 id="explainability-vs-predictability">
-<a class="anchor" href="#explainability-vs-predictability" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Explainability Vs. Predictability</strong>
-</h3>
+<h3 id="explainability-vs-predictability"><strong>Explainability Vs. Predictability</strong></h3>
 
 <ul>
   <li>Explainability means how much you could explain your model prediction. For example, <strong>Decision Tree</strong> is a very explainable model. Once you have a prediction from it, you can quickly tell you why you get this prediction by following the series of splits (if-then rules). These models are often called <strong>white-box</strong> models.</li>
@@ -358,7 +304,7 @@ window.onload = wrap_img;
 
 <p>Sometimes you must be aware of this trade-off as the application may require some explainability in your models of choice, so you will end up using simpler models or on reversal. You may not need any explainability for your application. Hence, you may prefer a model with high predictability over a simpler one. Below is a graph that shows this trade-off for various machine learning algorithms.</p>
 
-<p><img src="/Analixa/images/exp-comp.png" alt="" title="Interpretability vs. Complexity trade-off"></p>
+<p><img src="/Analixa/images/exp-comp.png" alt="" title="Interpretability vs. Complexity trade-off" /></p>
 
 
   </div><a class="u-url" href="/Analixa/machine%20learning/2022/05/17/So,-Which-ML-Algorithm-to-use!.html" hidden></a>
